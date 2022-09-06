@@ -1,12 +1,14 @@
 import React from "react"
-import { MdOutlineSpaceDashboard , MdOutlineCall , MdLogout } from 'react-icons/md';
-import { GiFuelTank , GiAerialSignal  } from 'react-icons/gi';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+// import { Chart } from 'react-chartjs-2';
+import { MdOutlineSpaceDashboard, MdOutlineCall, MdLogout } from 'react-icons/md';
+import { GiFuelTank, GiAerialSignal, GiHamburgerMenu } from 'react-icons/gi';
 import { TiDocumentText } from 'react-icons/ti';
-import { AiOutlineMessage , AiOutlineCalendar , AiOutlineBell , AiOutlineDown , AiOutlineSearch , AiOutlineFieldTime , AiOutlineWarning } from 'react-icons/ai';
+import { AiOutlineMessage, AiOutlineCalendar, AiOutlineBell, AiOutlineDown, AiOutlineSearch, AiOutlineFieldTime, AiOutlineWarning } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
-import { BsCalendar4Week , BsStopwatch , BsSpeedometer2 } from 'react-icons/bs';
+import { BsCalendar4Week, BsStopwatch, BsSpeedometer2 } from 'react-icons/bs';
 import { FaLessThan } from 'react-icons/fa';
-import { RiPinDistanceLine } from 'react-icons/ri';  
+import { RiPinDistanceLine } from 'react-icons/ri';
 
 
 
@@ -14,59 +16,72 @@ import { RiPinDistanceLine } from 'react-icons/ri';
 
 function App() {
 
+
   return (
     <section className='bg-gray-900 h-[100vh] w-[100vw] p-10 flex justify-evenly'>
-        {/* ---------------------Left Side Bar -----------------------------*/}
+      {/* ---------------------Left Side Bar -----------------------------*/}
       <div className='w-2/12 relative h-[90vh]'>
-        <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1"/> <p>Fuel</p></div>
+        <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p></div>
         <div className='my-12'>
           <ul className='flex flex-col items-center space-y-5'>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineSpaceDashboard className="text-xl mx-2"/> Dashboard</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><GiFuelTank className="text-xl mx-2"/> Fuel Efficiency</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><TiDocumentText className="text-xl mx-2"/> Documents</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><AiOutlineMessage className="text-xl mx-2"/> Messages</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><FiSettings className="text-xl mx-2"/> Settings</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><BsCalendar4Week className="text-xl mx-2"/> Calender</li>
-            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineCall className="text-xl mx-2"/> Help Center</li>
-            <li className='w-40 text-blue-600 flex items-center cursor-pointer font-semibold'><MdLogout className="text-xl mx-2 mt-28"/><span className="mt-28"> Log out</span></li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineSpaceDashboard className="text-xl mx-2" /> Dashboard</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><GiFuelTank className="text-xl mx-2" /> Fuel Efficiency</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><TiDocumentText className="text-xl mx-2" /> Documents</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><AiOutlineMessage className="text-xl mx-2" /> Messages</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><FiSettings className="text-xl mx-2" /> Settings</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><BsCalendar4Week className="text-xl mx-2" /> Calender</li>
+            <li className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineCall className="text-xl mx-2" /> Help Center</li>
+            <li className='w-40 text-blue-600 flex items-center cursor-pointer font-semibold'><MdLogout className="text-xl mx-2 mt-28" /><span className="mt-28"> Log out</span></li>
           </ul>
         </div>
       </div>
-        {/* ----------------------Middle Bar-------------------------------- */}
+      {/* ----------------------Middle Section-------------------------------- */}
       <div className='w-10/12 bg-gray-700 rounded-md flex justify-evenly p-4'>
         <div className="w-9/12 pl-3 pr-5">
           {/* search bar */}
           <div className="flex bg-gray-800 rounded-lg my-1 shadow-lg">
-          <AiOutlineSearch className="text-2xl text-gray-200 font-semibold mt-1 mx-1"/>
-          <input className="border-none w-[90%] bg-gray-800 text-gray-200 focus:outline-none p-1" type="text" placeholder="Search here" name="search" id="search" />
+            <AiOutlineSearch className="text-2xl text-gray-200 font-semibold mt-1 mx-1" />
+            <input className="border-none w-[90%] bg-gray-800 text-gray-200 focus:outline-none p-1" type="text" placeholder="Search here" name="search" id="search" />
           </div>
           {/* options section */}
           <div className="flex justify-between items-center py-4">
-            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2">
+            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2 flex justify-evenly">
               <div className="h-full p-1  ">
                 <div className="p-1 bg-yellow-500 rounded-md w-fit my-1">
-                <GiFuelTank className="text-3xl text-gray-100"/>
+                  <GiFuelTank className="text-3xl text-gray-100" />
                 </div>
                 <p className="text-gray-100">6,548 L</p>
                 <p className="text-gray-400">Fuel Usage</p>
               </div>
+              <div className="h-24 w-20">
+                {/* create graph here  */}
+                {/* <Chart type='line' data={chartData} /> */}
+              </div>
             </div>
-            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2">
+            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2 flex justify-evenly">
               <div className="h-full p-1  ">
                 <div className="p-1 bg-blue-500 rounded-md w-fit my-1">
-                <RiPinDistanceLine className="text-3xl text-gray-100"/>
+                  <RiPinDistanceLine className="text-3xl text-gray-100" />
                 </div>
                 <p className="text-gray-100">31,875</p>
                 <p className="text-gray-400">Distance</p>
               </div>
+              <div className="h-24 w-20">
+                {/* create graph here  */}
+                {/* <Chart type='line' data={chartData} /> */}
+              </div>
             </div>
-            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2">
+            <div className="bg-gray-800 w-52 h-28 rounded-md shadow-2xl p-2 flex justify-evenly">
               <div className="h-full p-1  ">
                 <div className="p-1 bg-cyan-500 rounded-md w-fit my-1">
-                <AiOutlineFieldTime className="text-3xl text-gray-100"/>
+                  <AiOutlineFieldTime className="text-3xl text-gray-100" />
                 </div>
                 <p className="text-gray-100">1h:22m:18s</p>
                 <p className="text-gray-400">Ideal Time</p>
+              </div>
+              <div className="h-24 w-20">
+                {/* create graph here  */}
+                {/* <Chart type='line' data={chartData} /> */}
               </div>
             </div>
           </div>
@@ -78,7 +93,7 @@ function App() {
               <div className="flex justify-between">
                 <div className="h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2">
                   <div className="bg-gray-900 p-2 rounded-md w-fit">
-                    <BsStopwatch className="text-gray-100 text-xl"/>
+                    <BsStopwatch className="text-gray-100 text-xl" />
                   </div>
                   <p className="text-[0.6rem] w-20 text-gray-200 font-semibold my-1">Drive Duration</p>
                   <div className="flex items-center p-[0.1rem] my-2 rounded-xl bg-gray-100 w-fit">
@@ -87,8 +102,8 @@ function App() {
                   </div>
                 </div>
                 <div className="h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2">
-                <div className="bg-gray-900 p-2 rounded-md w-fit">
-                    <AiOutlineWarning className="text-gray-100 text-xl"/>
+                  <div className="bg-gray-900 p-2 rounded-md w-fit">
+                    <AiOutlineWarning className="text-gray-100 text-xl" />
                   </div>
                   <p className="text-[0.6rem] w-20 text-gray-200 font-semibold my-1">Alert Sync</p>
                   <div className="flex items-center p-[0.1rem] my-2 rounded-xl border w-fit">
@@ -97,13 +112,43 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="border h-16 w-full rounded-md bg-gray-800 p-1 flex items-center justify-evenly">
-                <div className="w-[45%] h-full border"></div>
-                <div className="w-[45%] h-full border"></div>
+              <div className="shadow-xl h-16 w-full rounded-md bg-gray-800 p-1 flex items-center justify-evenly">
+                <div className="w-[45%] h-full flex justify-center items-center">
+                  <CircularProgressbar
+                    className="w-14"
+                    styles={buildStyles( {
+                      rotation: 0.5,
+                      strokeLinecap: 'butt',
+                      textSize: '1rem',
+                      pathTransitionDuration: 0.5,
+                      pathColor: `rgba(62, 152, 199, ${50 / 100})`,
+                      textColor: 'white',
+                      trailColor: 'white',
+                      backgroundColor: 'white',
+                    } )}
+                    value={50} text={`${50}%`} />
+                </div>
+                <p className="text-center text-xs -ml-20 mt-10 bg-gray-800 text-gray-200">Fuel Economy</p>
+                <div className="w-[45%] h-full flex justify-center items-center">
+                  <CircularProgressbar
+                    className="w-14"
+                    styles={buildStyles( {
+                      rotation: 0.25,
+                      strokeLinecap: 'butt',
+                      textSize: '1rem',
+                      pathTransitionDuration: 0.5,
+                      pathColor: `rgba(62, 152, 199, ${88 / 100})`,
+                      textColor: 'white',
+                      trailColor: '#d6d6d6',
+                      backgroundColor: '#3e98c7',
+                    } )}
+                    value={88} text={`${88}%`} />
+                </div>
+                <p className="text-center text-xs -ml-20 mt-10 bg-gray-800 text-gray-200">Fuel Efficiency</p>
               </div>
               <div className="shadow-xl h-12 w-full rounded-md bg-gray-800 p-2 flex space-x-2">
                 <div className="p-2 rounded-md bg-gray-900 w-fit">
-                  <BsSpeedometer2 className="text-2xl text-gray-200 -mt-1"/>
+                  <BsSpeedometer2 className="text-2xl text-gray-200 -mt-1" />
                 </div>
                 <div className="text-xs">
                   <p className="text-gray-200 font-semibold">50 Km/Hr</p>
@@ -111,32 +156,163 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="w-8/12 h-full bg-gray-800 p-4 rounded-lg rounded-l">
-
+            <div className="w-8/12 h-full bg-gray-800 p-4 rounded-lg rounded-l flex flex-wrap justify-center items-center relative">
+              {/* reverse */}
+              <div className="h-28 w-28 border-b border-r border-l border-gray-500 relative">
+                <CircularProgressbar
+                  className="w-14 -mt-3 -ml-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.75,
+                    strokeLinecap: 'butt',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(7, 16, 74, ${7 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={7} />
+                <p className="absolute top-1 -left-2 text-gray-300">7%</p>
+                <p className="text-blue-500 absolute -top-8 -left-6 text-sm">Reverse</p>
+              </div>
+              {/* gear 1 */}
+              <div className="h-28 w-28 border-b border-r border-gray-500 relative">
+                <CircularProgressbar
+                  className="w-14 -mt-3 -ml-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.5,
+                    strokeLinecap: 'butt',
+                    textSize: '1rem',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(62, 152, 199, ${16 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={16} />
+                <p className="absolute top-1 -left-3 text-gray-300">16%</p>
+                <p className="text-gray-300 absolute -top-8 -left-5 text-sm">Gear 1</p>
+              </div>
+              {/* gear 3 */}
+              <div className="h-28 w-28 border-b border-r border-gray-500 relative">              <CircularProgressbar
+                className="w-14 -mt-3 -ml-7 bg-gray-800"
+                styles={buildStyles( {
+                  rotation: 0.5,
+                  strokeLinecap: 'butt',
+                  textSize: '1rem',
+                  pathTransitionDuration: 0.5,
+                  pathColor: `rgba(62, 152, 199, ${10 / 100})`,
+                  textColor: 'white',
+                  trailColor: 'white',
+                  backgroundColor: 'white',
+                } )}
+                value={10} />
+                <p className="absolute top-1 -left-3 text-gray-300">10%</p>
+                <p className="text-gray-300 absolute -top-8 -left-5 text-sm">Gear 3</p>
+              </div>
+              {/* gear 5 */}
+              <CircularProgressbar
+                className="w-14 absolute top-9 right-6 bg-gray-800"
+                styles={buildStyles( {
+                  rotation: 0.5,
+                  strokeLinecap: 'butt',
+                  textSize: '1rem',
+                  pathTransitionDuration: 0.5,
+                  pathColor: `rgba(62, 152, 199, ${16 / 100})`,
+                  textColor: 'white',
+                  trailColor: 'white',
+                  backgroundColor: 'white',
+                } )}
+                value={16} />
+              <p className="absolute top-12 right-8 text-gray-300">16%</p>
+              <p className="text-gray-300 absolute top-4 right-8 text-sm">Gear 5</p>
+              {/* gear 2 */}
+              <div className="h-28 w-28 border-r border-gray-500 -mt-16 relative">
+                <CircularProgressbar
+                  className="w-14 absolute -bottom-4 -right-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.5,
+                    strokeLinecap: 'butt',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(62, 152, 199, ${18 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={18} />
+                <p className="absolute bottom-0 -right-5 text-gray-300">18%</p>
+                <p className="text-gray-300 absolute -bottom-9 -right-6 text-sm">Gear 2</p>
+              </div>
+              {/* gear 4 */}
+              <div className="h-28 w-28 border-r border-gray-500 -mt-16 relative">
+                <CircularProgressbar
+                  className="w-14 absolute -bottom-4 -right-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.5,
+                    strokeLinecap: 'butt',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(62, 152, 199, ${12 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={12} />
+                <p className="absolute bottom-0 -right-5 text-gray-300">12%</p>
+                <p className="text-gray-300 absolute -bottom-9 -right-6 text-sm">Gear 4</p>
+                <CircularProgressbar
+                  className="w-14 absolute -top-6 -right-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.5,
+                    strokeLinecap: 'butt',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(62, 152, 199, ${7 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={7} />
+                <p className="absolute -top-2 -right-4 text-gray-300">7%</p>
+              </div>
+              {/* gear 6 */}
+              <div className="h-28 w-28 border-r border-gray-500 -mt-16 relative">
+                <CircularProgressbar
+                  className="w-14 absolute -bottom-4 -right-7 bg-gray-800"
+                  styles={buildStyles( {
+                    rotation: 0.5,
+                    strokeLinecap: 'butt',
+                    pathTransitionDuration: 0.5,
+                    pathColor: `rgba(62, 152, 199, ${8 / 100})`,
+                    textColor: 'white',
+                    trailColor: 'white',
+                    backgroundColor: 'white',
+                  } )}
+                  value={8} />
+                <p className="absolute bottom-0 -right-5 text-gray-300">08%</p>
+                <p className="text-gray-300 absolute -bottom-9 -right-6 text-sm">Gear 6</p>
+              </div>
             </div>
           </div>
         </div>
         {/* -------------------------Right Side Bar -------------------------*/}
         <div className="flex flex-col items-center justify-start">
           <div className="flex justify-evenly items-center mx-2">
-              <div className="mx-1 p-2 rounded-md bg-gray-800 shadow-md cursor-pointer"><AiOutlineCalendar className="text-2xl text-gray-200"/></div>
-              <div className="mx-1 p-2 rounded-md bg-gray-800 shadow-md cursor-pointer"><AiOutlineBell className="text-2xl text-gray-200"/></div>
-              <div className="w-40 items-center flex mx-2 cursor-pointer">
-                <div className="w-20 h-10 flex items-center rounded-md">
+            <div className="mx-1 p-2 rounded-md bg-gray-800 shadow-md cursor-pointer"><AiOutlineCalendar className="text-2xl text-gray-200" /></div>
+            <div className="mx-1 p-2 rounded-md bg-gray-800 shadow-md cursor-pointer"><AiOutlineBell className="text-2xl text-gray-200" /></div>
+            <div className="w-40 items-center flex mx-2 cursor-pointer">
+              <div className="w-20 h-10 flex items-center rounded-md">
                 <img className="rounded-lg shadow-md h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaytfpFF7DhpFlyNStvoSloA_hGLvMD2CmcIomfVdv&s" alt="" />
-                  </div>
-                <div>
-                  <div className="w-24 mx-2 text-gray-200 flex"><p className="text-sm"> Mike Smith</p> <AiOutlineDown className="text-xs mt-1 mx-1 text-gray-400"/></div>
-                  <p className="mx-2 text-xs text-gray-300">Admin</p>
-                </div>
               </div>
+              <div>
+                <div className="w-24 mx-2 text-gray-200 flex"><p className="text-sm"> Mike Smith</p> <AiOutlineDown className="text-xs mt-1 mx-1 text-gray-400" /></div>
+                <p className="mx-2 text-xs text-gray-300">Admin</p>
+              </div>
+            </div>
           </div>
           <div className="rounded-md shadow-2xl mt-2">
             <div className="shadow-md py-1">
               <p className="text-xl m-2 flex justify-evenly items-center">
-                <FaLessThan className="text-blue-500"/> 
-              <p className="mx-2 text-gray-300">Fleet&nbsp;Details</p>
-              <p className="text-xs text-gray-400 -mb-1">Old&nbsp;Street&nbsp;,&nbsp;NewYork</p>
+                <FaLessThan className="text-blue-500" />
+                <p className="mx-2 text-gray-300">Fleet&nbsp;Details</p>
+                <p className="text-xs text-gray-400 -mb-1">Old&nbsp;Street&nbsp;,&nbsp;NewYork</p>
               </p>
             </div>
             <div className="px-4 py-2">
@@ -163,20 +339,20 @@ function App() {
               </div>
               <div className="bg-gray-800 shadow-xl w-56 h-20 rounded-md mx-auto mt-6 p-2">
                 <div className="w-6 h-6 rounded-full bg-blue-500 -mt-5 ml-2 p-1">
-                  <GiAerialSignal className="font-semibold text-gray-200"/>
+                  <GiAerialSignal className="font-semibold text-gray-200" />
                 </div>
                 <div className="flex justify-between text-gray-200 font-semibold">
                   <p className="text-xs"> EW Trucks Private Limited</p>
                   <p className="text-[0.6rem]">18 Cliants</p>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
+                </div>
+                <div className="flex justify-between text-gray-400">
                   <p className="text-xs">85 New York, II Pharse Old Street</p>
                   <p className="text-[0.6rem] mt-5">Total&nbsp;Drivers</p>
-                  </div>
-                  <div className="flex justify-between text-gray-400 pb-2">
+                </div>
+                <div className="flex justify-between text-gray-400 pb-2">
                   <p className="text-xs">New York, USA</p>
                   <p className="text-[0.6rem] text-gray-200 font-semibold">64452 KM</p>
-                  </div>
+                </div>
               </div>
               <div className="w-56 mx-auto my-2 flex justify-between items-center">
                 <div className="h-7 w-7 rounded-md flex items-center">
@@ -197,7 +373,7 @@ function App() {
           </div>
         </div>
       </div>
-    </section>
+    </section>  
   )
 }
 
