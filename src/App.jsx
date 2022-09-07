@@ -17,7 +17,6 @@ import { ImCross } from 'react-icons/im';
 
 function App() {
 
-
   const [rightbar, setRightbar] = useState( false )
   const ref = useRef()
 
@@ -468,17 +467,18 @@ function App() {
           <div className="w-full h-full bg-gray-900 p-4 rounded-lg rounded-r flex flex-col justify-evenly">
             <p className="text-gray-400">Vehicle Control</p>
             <div className="flex justify-between md:justify-evenly my-4">
-              <div className="w-44 shadow-xl rounded-md bg-gray-800 p-2">
+              <div className="w-36 md:w-44 shadow-xl rounded-md bg-gray-800 p-2">
                 <div className="bg-gray-900 p-2 rounded-md w-fit">
                   <BsStopwatch className="text-gray-100 text-xl" />
                 </div>
                 <p className="text-sm  text-gray-200 font-semibold my-2">Drive Duration</p>
                 <div className="flex items-center p-[0.1rem] my-2 rounded-xl bg-gray-100 w-fit">
                   <p className="text-xs">On</p>
-                  <div className="h-3 w-3 rounded-full bg-blue-500 ml-1"></div>
+                  <div className='h-3 w-3 rounded-full bg-blue-500 ml-1'>
+                  </div>
                 </div>
               </div>
-              <div className="w-44 shadow-xl rounded-md bg-gray-800 p-2">
+              <div className="w-36 md:w-44 shadow-xl rounded-md bg-gray-800 p-2">
                 <div className="bg-gray-900 p-2 rounded-md w-fit">
                   <AiOutlineWarning className="text-gray-100 text-xl" />
                 </div>
@@ -758,9 +758,9 @@ function App() {
       <footer className="text-gray-600 body-font bg-gray-900">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1" /> <a href="https://www.linkedin.com/in/rohan-singh-5b84a9223/" target="_blank">Rohan</a></div>
+            <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p></div>
           </a>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 flex flex-wrap items-center justify-center">© 2022 Made With <GiSelfLove className="text-lg text-red-500 mx-2"/> By Fuel— All Rights Reserved
+          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 flex flex-wrap items-center justify-center">© 2022 Made With <GiSelfLove className="text-lg text-red-500 mx-2"/> By <a className="mx-1" href="https://www.linkedin.com/in/rohan-singh-5b84a9223/" target="_blank"> Rohan -</a> All Rights Reserved
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a className="text-gray-500">
