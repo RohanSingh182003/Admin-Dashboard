@@ -62,23 +62,23 @@ const FuelEfficiency = () => {
                 <p className="text-gray-400">Vehicle Control</p>
                 <div className="flex justify-between items-center lg:items-start overflow-x-scroll scrollbar-hide my-2 lg:my-0">
                   {/* drive duration */}
-                <div onClick={()=>{setDriveDuration(!driveDuration)}} className="h-24 lg:h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2 cursor-pointer">
+                <div className="h-24 lg:h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2 cursor-pointer">
                     <div className="bg-gray-900 p-2 rounded-md w-fit">
                       <BsStopwatch className="text-gray-100 text-xl" />
                     </div>
                     <p className="text-[0.6rem] w-20 text-gray-200 font-semibold my-1">Drive Duration</p>
-                    <div className={`flex items-center p-[0.1rem] my-2 rounded-xl ${driveDuration?'bg-gray-100':'border text-gray-300'} w-fit`}>
+                    <div onClick={()=>{setDriveDuration(!driveDuration)}} className={`flex items-center p-[0.1rem] my-2 rounded-xl ${driveDuration?'bg-gray-100':'border text-gray-300'} w-fit`}>
                       <p className="text-[0.6rem]">{driveDuration?'On':'Off'}</p>
                       <div className={`h-3 w-3 rounded-full ${driveDuration?'bg-blue-500':'bg-gray-300'} ml-1`}></div>
                     </div>
                   </div>
                   {/* alert sync */}
-                  <div onClick={()=>{setAlertSync(!alertSync)}} className="h-24 lg:h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2 cursor-pointer">
+                  <div className="h-24 lg:h-28 w-[45%] shadow-xl rounded-md bg-gray-800 p-2 cursor-pointer">
                     <div className="bg-gray-900 p-2 rounded-md w-fit">
                       <AiOutlineWarning className="text-gray-100 text-xl" />
                     </div>
                     <p className="text-[0.6rem] w-20 text-gray-200 font-semibold my-1">Alert Sync</p>
-                    <div className={`flex items-center p-[0.1rem] my-2 rounded-xl ${alertSync?'bg-gray-100':'border text-gray-300'} w-fit`}>
+                    <div onClick={()=>{setAlertSync(!alertSync)}} className={`flex items-center p-[0.1rem] my-2 rounded-xl ${alertSync?'bg-gray-100':'border text-gray-300'} w-fit`}>
                       <p className="text-[0.6rem]">{alertSync?'On':'Off'}</p>
                       <div className={`h-3 w-3 rounded-full ${alertSync?'bg-blue-500':'bg-gray-300'} ml-1`}></div>  
                     </div>

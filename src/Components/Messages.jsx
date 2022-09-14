@@ -2,7 +2,7 @@ import React from 'react'
 
 const Messages = () => {
   return (
-    <div>Messages</div>
+    <div className='h-[100vh] w-[100vw]'>Messages</div>
   )
 }
 

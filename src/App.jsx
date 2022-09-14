@@ -137,23 +137,21 @@ function App() {
           <div ref={ref} className='my-12 px-6 lg:px-0 py-14 lg:py-0 transform transition-transform -translate-x-full lg:translate-x-0 z-10 h-[100vh] absolute -top-10 bg-gray-900 left-0'>
             <ImCross onClick={toggleSidebar} className="absolute top-3 right-4 text-xl text-gray-500 lg:hidden cursor-pointer"/>
             <ul className='flex flex-col items-center space-y-5'>
-              <Link to={"/"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineSpaceDashboard className="text-xl mx-2" /> Dashboard</Link>
-              <Link to={"fuelefficiency"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><GiFuelTank className="text-xl mx-2" /> Fuel Efficiency</Link>
-              <Link to={"documents"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><TiDocumentText className="text-xl mx-2" /> Documents</Link>
-              <Link to={"messages"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><AiOutlineMessage className="text-xl mx-2" /> Messages</Link>
-              <Link to={"settings"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><FiSettings className="text-xl mx-2" /> Settings</Link>
-              <Link to={"calender"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><BsCalendar4Week className="text-xl mx-2" /> Calender</Link>
-              <Link to={"helpcenter"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold'><MdOutlineCall className="text-xl mx-2" /> Help Center</Link>
+              <Link to={"/"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold -ml-10'><div className="flex items-center my-1 lg:my-4 lg:ml-4 text-3xl text-blue-500"><GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p>
+          </div></Link>
+              <Link to={"/"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><MdOutlineSpaceDashboard className="text-xl mx-2" /> Dashboard</Link>
+              <Link to={"fuelefficiency"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><GiFuelTank className="text-xl mx-2" /> Fuel Efficiency</Link>
+              <Link to={"documents"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><TiDocumentText className="text-xl mx-2" /> Documents</Link>
+              <Link to={"messages"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><AiOutlineMessage className="text-xl mx-2" /> Messages</Link>
+              <Link to={"settings"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><FiSettings className="text-xl mx-2" /> Settings</Link>
+              <Link to={"calender"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><BsCalendar4Week className="text-xl mx-2" /> Calender</Link>
+              <Link to={"helpcenter"} className='w-40 text-gray-300 flex items-center cursor-pointer font-semibold hover:underline hover:underline-offset-4 hover:text-blue-500'><MdOutlineCall className="text-xl mx-2" /> Help Center</Link>
               <Link to={"logout"} className='w-40 text-blue-600 flex items-center cursor-pointer font-semibold'><MdLogout className="text-xl mx-2 mt-28" /><span className="mt-28"> Log out</span></Link>
             </ul>
           </div>
         </div>
         {/* ----------------------Middle Section-------------------------------- */}
         <div className='w-full lg:w-10/12 relative bg-gray-700 rounded-md flex justify-evenly lg:p-4'>
-          <div className="absolute -top-14 hidden lg:block">
-        <div className="flex items-center my-1 lg:my-4 lg:ml-4 text-3xl text-blue-500"><GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p>
-          </div>
-          </div>
           <div className="w-full lg:w-9/12 pl-3 pr-5">
             {/* search bar */}
             <div className="flex bg-gray-800 rounded-lg my-2 shadow-lg">

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Calender = () => {
   return (
-    <div>Calender</div>
+    <div className='h-[100vh] w-[100vw]'>Calender</div>
   )
 }
 
