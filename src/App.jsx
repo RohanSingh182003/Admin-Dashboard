@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 // import { Chart } from 'react-chartjs-2';
 import { MdOutlineSpaceDashboard, MdOutlineCall, MdLogout } from 'react-icons/md';
-import { GiFuelTank, GiAerialSignal, GiHamburgerMenu , GiSelfLove } from 'react-icons/gi';
+import { GiFuelTank, GiAerialSignal, GiHamburgerMenu} from 'react-icons/gi';
 import { TiDocumentText } from 'react-icons/ti';
 import { AiOutlineMessage, AiOutlineCalendar, AiOutlineBell, AiOutlineDown, AiOutlineSearch } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
@@ -21,6 +21,7 @@ import Settings from "./Components/Settings";
 import Calender from "./Components/Calender";
 import HelpCenter from "./Components/HelpCenter";
 import DashBoard from "./Components/DashBoard";
+import Footer from "./Components/Footer";
 
 
 
@@ -44,7 +45,8 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <section className='flex flex-col lg:flex-row bg-gray-900 h-full w-[100vw] lg:p-10 justify-evenly overflow-x-hidden'>
+    <section className="flex flex-col bg-gray-900 h-full w-[100vw] lg:p-10">
+      <div className='flex flex-col lg:flex-row justify-evenly'>
         {/* ---------------------Left Side Bar -----------------------------*/}
         <div className='w-[100vw] h-14 lg:w-2/12 relative lg:h-[90vh]'>
           <div className='text-blue-500 text-2xl font-bold text-center flex items-center justify-between relative px-4'>
@@ -154,10 +156,10 @@ function App() {
         <div className='w-full lg:w-10/12 relative bg-gray-700 rounded-md flex justify-evenly lg:p-4'>
           <div className="w-full lg:w-9/12 pl-3 pr-5">
             {/* search bar */}
-            <div className="flex bg-gray-800 rounded-lg my-2 shadow-lg">
+            {/* <div className="flex bg-gray-800 rounded-lg my-2 shadow-lg">
               <AiOutlineSearch className="text-2xl text-gray-200 font-semibold mt-1 mx-1" />
               <input className="border-none w-[90%] bg-gray-800 text-gray-200 focus:outline-none p-1" type="text" placeholder="Search here" name="search" id="search" />
-            </div>
+            </div> */}
             {/* page components */}
             <Routes>
             <Route exact path="/" element={<DashBoard />} />
@@ -253,41 +255,10 @@ function App() {
             </div>
           </div>}
         </div>
+      </div>
+      <Footer/>
       </section>
       {/* footer section */}
-      <footer className="text-gray-600 body-font bg-gray-900">
-        <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p></div>
-          </a>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-500 sm:py-2 sm:mt-0 mt-4 flex flex-wrap items-center justify-center">© 2022 Made With <GiSelfLove className="text-lg text-red-500 mx-2"/> By <a className="mx-1" href="https://www.linkedin.com/in/rohan-singh-5b84a9223/" target="_blank"> Rohan -</a> All Rights Reserved
-          </p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a className="text-gray-500">
-              <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-              </svg>
-            </a>
-            <a className="ml-3 text-gray-500">
-              <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </a>
-            <a className="ml-3 text-gray-500">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-              </svg>
-            </a>
-            <a className="ml-3 text-gray-500">
-              <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
-                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                <circle cx="4" cy="4" r="2" stroke="none"></circle>
-              </svg>
-            </a>
-          </span>
-        </div>
-      </footer>
     </BrowserRouter>
   )
 }
