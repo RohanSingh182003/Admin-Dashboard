@@ -3,7 +3,7 @@ import { GiFuelTank,GiSelfLove } from 'react-icons/gi';
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font bg-gray-900">
+    <footer className="text-gray-600 body-font bg-gray-900 lg:z-10">
     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
       <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <div className='text-blue-500 text-2xl font-bold text-center flex items-center'> <GiFuelTank className="ml-8 mr-2 -mt-1" /> <p>Fuel</p></div>
