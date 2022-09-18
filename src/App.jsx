@@ -88,7 +88,7 @@ function App() {
                   to={"/"}
                   className="w-40 text-gray-300 flex items-center cursor-pointer font-semibold -ml-10"
                 >
-                  <div className="flex items-center my-1 lg:my-4 lg:ml-4 text-3xl text-blue-500 -mt-4 lg:-mt-8">
+                  <div className="flex items-center lg:my-4 lg:ml-4 text-3xl text-blue-500 -mt-4 lg:-mt-8 my-6">
                     <GiFuelTank className="ml-8 mr-2 -mt-1 text-4xl" />{" "}
                     <p className="text-2xl">
                       <span className="text-4xl text-blue-600"> F</span>uel
