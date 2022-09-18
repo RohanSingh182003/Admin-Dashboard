@@ -11,7 +11,7 @@ const FuelEfficiency = () => {
   return (
     <div className='lg:my-8'>
             {/* options section */}
-            <div className="flex justify-evenly items-center py-4 mx-auto flex-wrap lg:flex-nowrap">
+            <div className="flex justify-evenly items-center py-2 xl:py-8 2xl:py-14 mx-auto flex-wrap lg:flex-nowrap">
               <div className="bg-gray-800 w-56 rounded-md shadow-2xl py-2 flex justify-between px-8 md:px-2 md:justify-evenly cursor-pointer hover:-translate-y-1 hover:duration-300 hover:shadow-2xl">
                 <div className="h-full p-1">
                   <div className="p-1 bg-yellow-500 rounded-md w-fit my-1">
