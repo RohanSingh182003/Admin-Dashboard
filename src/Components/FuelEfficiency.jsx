@@ -44,7 +44,7 @@ const FuelEfficiency = () => {
   }
   };
   return (
-    <div className="lg:my-8">
+    <div className="lg:my-8 h-[88vh]">
       {/* options section */}
       <div className="flex justify-evenly items-center py-2 xl:py-8 2xl:py-14 mx-auto flex-wrap lg:flex-nowrap">
         <Modal

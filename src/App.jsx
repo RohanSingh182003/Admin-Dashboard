@@ -54,7 +54,7 @@ function App() {
         />
         <div className="flex flex-col lg:flex-row justify-evenly">
           {/* ---------------------Left Side Bar -----------------------------*/}
-          <div className="w-full h-14 lg:w-2/12 relative lg:h-[90vh]">
+          <div className="w-full h-14 lg:w-2/12 relative">
             <div className="text-blue-500 text-2xl font-bold text-center flex items-center justify-between relative px-4">
               <GiHamburgerMenu
                 onClick={toggleSidebar}
@@ -77,7 +77,7 @@ function App() {
             </div>
             <div
               ref={ref}
-              className="my-12 px-6 lg:px-0 py-14 lg:py-0 transform transition-transform -translate-x-full lg:translate-x-0 z-10 h-[100vh] absolute -top-10 bg-gray-900 left-0"
+              className="my-12 px-6 lg:px-0 py-14 lg:py-0 transform transition-transform -translate-x-full lg:translate-x-0 z-10 absolute -top-10 bg-gray-900 left-0"
             >
               <ImCross
                 onClick={toggleSidebar}
@@ -149,8 +149,8 @@ function App() {
             </div>
           </div>
           {/* ----------------------Middle Section-------------------------------- */}
-          <div className="w-full lg:w-10/12 relative bg-gray-700 rounded-md flex justify-evenly">
-            <div className="w-full lg:w-10/12">
+          <div className="w-full relative bg-gray-700 rounded-md flex justify-evenly">
+            <div className="w-full lg:pr-8">
               {/* search bar */}
               {/* <div className="flex bg-gray-800 rounded-lg my-2 shadow-lg">
               <AiOutlineSearch className="text-2xl text-gray-200 font-semibold mt-1 mx-1" />
@@ -192,7 +192,7 @@ function App() {
             {rightbar && <ProfileSection />}
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
       {/* footer section */}
     </BrowserRouter>
