@@ -61,7 +61,7 @@ const FuelEfficiency = () => {
               <input
               value={pin} 
               onChange={(e)=> {setPin(e.target.value)}} 
-              autoComplete="false" placeholder="Enter PIN Secretly" className="bg-gray-800 focus:outline-none border-b w-full text-gray-200 border-blue-500 focus:border-b-2 focus:border-blue-500 p-2 px-1 placeholder-transparent peer" type="text" name="pin" id="pin" />
+              autoComplete="false" placeholder="Enter PIN Secretly" className="bg-gray-800 focus:outline-none border-b w-full text-gray-200 border-blue-500 focus:border-b-2 focus:border-blue-500 p-2 px-1 placeholder-transparent peer" type="number" name="pin" id="pin" />
               <label className="absolute transition-all -top-3.5 left-1 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-200 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-200 peer-focus:text-xs" htmlFor="pin">Enter PIN Secretly</label>
               </div>
               <button onClick={()=>{handleSubmit()}} className="p-2 w-full text-lg font-semibold bg-blue-500 hover:bg-blue-600 rounded-md">Submit</button>
