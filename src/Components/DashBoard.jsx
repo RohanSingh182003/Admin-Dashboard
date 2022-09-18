@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react"
 
 const DashBoard = () => {
   return (
-    <div className='h-[100vh] w-[100vw]'>DashBoard</div>
+    <div className='h-[100vh] w-[100vw]'>
+      DashBoard
+    </div>
   )
 }
 
