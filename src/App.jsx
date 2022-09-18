@@ -50,6 +50,7 @@ function App() {
           rtl={false}
           pauseOnFocusLoss
           draggable
+          pauseOnHover
         />
         <div className="flex flex-col lg:flex-row justify-evenly">
           {/* ---------------------Left Side Bar -----------------------------*/}

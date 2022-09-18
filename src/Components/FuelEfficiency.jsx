@@ -7,7 +7,6 @@ import { BsStopwatch, BsSpeedometer2 } from "react-icons/bs";
 import { RiPinDistanceLine } from "react-icons/ri";
 import { toast } from 'react-toastify';
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Modal from "@mui/material/Modal";
 
 const FuelEfficiency = () => {
@@ -25,20 +24,23 @@ const FuelEfficiency = () => {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-  const [otp, setOtp] = useState('')
+  const [pin, setPin] = useState('')
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleSubmit = () => {
     setChecked(true);
-    if(otp){
-      toast.success('OTP Submitted Successfully.')
-      setOtp('')
+    if(pin.length >= 4){
+      toast.success('PIN Submitted Successfully.')
+      setPin('')
       handleClose();
     setChecked(false);
   }
+  else if(pin.length > 0 && pin.length < 4){
+    toast.warn('PIN is too short! fill it correctly.')
+  }
   else{
-    toast.error('Please Enter the OTP.')
+    toast.error('Please Enter the PIN.')
   }
   };
   return (
@@ -48,24 +50,19 @@ const FuelEfficiency = () => {
         <Modal
           open={open}
           onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
             <div className="h-full bg-gray-800 text-gray-200 p-4 rounded-lg w-96">
               <p className="text-3xl font-bold mx-2">
-                OTP Verification
+                PIN Verification
               </p>
-              <p className="mx-3 mt-2 text-gray-500 text-sm">Enter the OTP which is shared on your registered mobile numbe.</p>
-              <div className="my-6 text-gray-100">
-              <TextField
-              type="number"
-              color="primary" 
-              value={otp} 
-              onChange={(e)=> {setOtp(e.target.value)}} 
-              fullWidth id="standard-basic"
-              label="One Time Password" 
-              variant="standard" />
+              <p className="mx-3 mt-2 text-gray-400 text-sm">Enter the account pin.</p>
+              <div className="my-6 relative">
+              <input
+              value={pin} 
+              onChange={(e)=> {setPin(e.target.value)}} 
+              autoComplete="false" placeholder="Enter PIN Secretly" className="bg-gray-800 focus:outline-none border-b w-full text-gray-200 border-blue-500 focus:border-b-2 focus:border-blue-500 p-2 px-1 placeholder-transparent peer" type="text" name="pin" id="pin" />
+              <label className="absolute transition-all -top-3.5 left-1 text-xs peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-200 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-200 peer-focus:text-xs" htmlFor="pin">Enter PIN Secretly</label>
               </div>
               <button onClick={()=>{handleSubmit()}} className="p-2 w-full text-lg font-semibold bg-blue-500 hover:bg-blue-600 rounded-md">Submit</button>
             </div>
@@ -120,7 +117,7 @@ const FuelEfficiency = () => {
                 Drive Duration
               </p>
               <Switch 
-              checked={checked}
+              checked={open?checked:false}
               onChange={handleChange}
               onClick={handleOpen} className="-ml-2 -mt-1" />
             </div>
