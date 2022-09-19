@@ -61,11 +61,8 @@ function App() {
                 onClick={toggleSidebar}
                 className="lg:hidden cursor-pointer mt-2"
               />
-              <div className="flex items-center my-1 lg:my-4 lg:ml-4 mt-2">
-                <GiFuelTank className="ml-8 mr-2 -mt-1 text-3xl" />
-                <p>
-                  <span className="text-4xl text-blue-00"> F</span>uel
-                </p>
+              <div className="grid w-44 place-items-center my-1 lg:my-4 lg:ml-4 mt-2">
+                <img className="w-32 h-10 lg:hidden" src="logo.png" alt="" />
               </div>
               <div
                 onClick={() => {
@@ -87,13 +84,10 @@ function App() {
               <ul className="flex flex-col items-center lg:mt-16 space-y-1">
                 <Link
                   to={"/"}
-                  className="w-40 text-gray-300 flex items-center cursor-pointer font-semibold -ml-10"
+                  className="w-40 text-gray-300 flex items-center cursor-pointer font-semibold absolute top-4 -left-1"
                 >
                   <div className="flex items-center lg:my-4 lg:ml-4 text-3xl text-blue-500 -mt-4 lg:-mt-8 my-6">
-                    <GiFuelTank className="ml-8 mr-2 -mt-1 text-4xl" />{" "}
-                    <p className="text-2xl">
-                      <span className="text-4xl text-blue-600"> F</span>uel
-                    </p>
+                    <img src="logo.png" alt="" />
                   </div>
                 </Link>
                 <Link
