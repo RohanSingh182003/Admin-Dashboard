@@ -23,6 +23,7 @@ import HelpCenter from "./Components/HelpCenter";
 import DashBoard from "./Components/DashBoard";
 import Footer from "./Components/Others/Footer";
 import ProfileSection from "./Components/Others/ProfileSection";
+import PageNotFound from "./Components/PageNotFound";
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -164,6 +165,7 @@ function App() {
                 <Route exact path="settings" element={<Settings />} />
                 <Route exact path="calender" element={<Calender />} />
                 <Route exact path="helpcenter" element={<HelpCenter />} />
+                <Route path="*" element={<PageNotFound />} />
               </Routes>
             </div>
             {/* -------------------------Right Side Bar -------------------------*/}
