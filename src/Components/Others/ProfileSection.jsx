@@ -17,7 +17,7 @@ const ProfileSection = ({props}) => {
                 </div>
                 <div>
                   <div className="w-24 mx-2 text-gray-200 flex"><p className="text-sm"> Mike Smith</p> <AiOutlineDown className="text-xs mt-1 mx-1 text-gray-400" /></div>
-                  <p className="mx-2 text-xs text-gray-300">Admin</p>
+                  {/* <p className="mx-2 text-xs text-gray-300">Admin</p> */}
                 </div>
               </div>
             </div>

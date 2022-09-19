@@ -2,7 +2,7 @@ import React from 'react'
 
 const Settings = () => {
   return (
-    <div className='h-[100vh] w-[100vw]'>Settings</div>
+    <div className='h-full md:h-[88vh] w-full'>Settings</div>
   )
 }
 

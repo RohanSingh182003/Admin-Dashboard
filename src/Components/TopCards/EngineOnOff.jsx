@@ -2,7 +2,7 @@ import React from 'react'
 
 const EngineOnOff = ({props}) => {
   return (
-    <div className='bg-gray-800 py-2 px-4 flex justify-between items-center w-full md:w-64 rounded-md my-2 lg:my-0'>
+    <div className='bg-gray-800 py-2 px-4 flex justify-between items-center w-full md:w-64 rounded-md my-2 lg:my-0 shadow-xl'>
         <p className='text-blue-200 font-bold'>Engine On/Off</p>
         <div className='h-12 grid place-items-center'>
             <div className={`h-12 w-12 ${props.state === 'on'?'bg-green-500':'bg-red-500'} grid place-items-center rounded-full`}>

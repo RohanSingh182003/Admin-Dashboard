@@ -21,8 +21,8 @@ import Settings from "./Components/Settings";
 import Calender from "./Components/Calender";
 import HelpCenter from "./Components/HelpCenter";
 import DashBoard from "./Components/DashBoard";
-import Footer from "./Components/Footer";
-import ProfileSection from "./Components/ProfileSection";
+import Footer from "./Components/Others/Footer";
+import ProfileSection from "./Components/Others/ProfileSection";
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -77,7 +77,7 @@ function App() {
             </div>
             <div
               ref={ref}
-              className="my-12 px-6 lg:px-0 py-14 lg:py-0 transform transition-transform -translate-x-full lg:translate-x-0 z-10 absolute -top-10 bg-gray-900 left-0"
+              className="my-12 px-6 lg:px-0 py-14 lg:py-0 transform transition-transform -translate-x-full lg:translate-x-0 z-10 absolute -top-10 bg-gray-900 left-0 h-[100vh] lg:h-auto"
             >
               <ImCross
                 onClick={toggleSidebar}
@@ -151,11 +151,6 @@ function App() {
           {/* ----------------------Middle Section-------------------------------- */}
           <div className="w-full relative bg-gray-700 rounded-md flex justify-evenly">
             <div className="w-full lg:pr-8">
-              {/* search bar */}
-              {/* <div className="flex bg-gray-800 rounded-lg my-2 shadow-lg">
-              <AiOutlineSearch className="text-2xl text-gray-200 font-semibold mt-1 mx-1" />
-              <input className="border-none w-[90%] bg-gray-800 text-gray-200 focus:outline-none p-1" type="text" placeholder="Search here" name="search" id="search" />
-            </div> */}
               {/* page components */}
               <Routes>
                 <Route exact path="/" element={<DashBoard />} />
