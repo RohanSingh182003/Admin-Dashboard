@@ -4,13 +4,13 @@ import React from 'react'
 const CarTemperature = ({props}) => {
   let temperature = props.temperature;
   let color;
-  if(temperature>= 87 && temperature < 103){
+  if( temperature < 90){
     color = 'green';
   }
-  else if(temperature >= 103 && temperature < 150){
+  else if(temperature >= 90 && temperature < 96){
     color = 'yellow';
   }
-  else if(temperature >= 150){
+  else if(temperature >= 96){
     color = 'red';
   }
   else{

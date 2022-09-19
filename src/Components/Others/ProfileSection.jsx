@@ -5,6 +5,15 @@ import { ImCross } from 'react-icons/im';
 
 
 const ProfileSection = ({props}) => {
+  let vehicleOn = true
+  let name = 'Mike Smith'
+  let vehicleNumber = 'ER 14 D 9549'
+  let vehicleLocation = 'Gurz Old Center'
+  let speed = 140
+  let altitude = '154'
+  let direction = 'NE'
+  let driverName = 'Ryan Renolds'
+  let driverLocation = 'USA'
   return (
     <div className="flex flex-col items-center justify-start mx-2 absolute right-4 top-2 bg-gray-800 py-4 rounded-lg z-10 lg:z-0 -mr-6 -mt-3 lg:mr-4 lg:mt-0">
         <ImCross onClick={()=>{props.setLogin(!props.login)}} className='lg:hidden right-1 top-1 text-gray-600 absolute text-md'/>
@@ -16,7 +25,7 @@ const ProfileSection = ({props}) => {
                   <img className="rounded-lg shadow-md h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaytfpFF7DhpFlyNStvoSloA_hGLvMD2CmcIomfVdv&s" alt="" />
                 </div>
                 <div>
-                  <div className="w-24 mx-2 text-gray-200 flex"><p className="text-sm"> Mike Smith</p> <AiOutlineDown className="text-xs mt-1 mx-1 text-gray-400" /></div>
+                  <div className="w-24 mx-2 text-gray-200 flex"><p className="text-sm">{name}</p> <AiOutlineDown className="text-xs mt-1 mx-1 text-gray-400" /></div>
                   {/* <p className="mx-2 text-xs text-gray-300">Admin</p> */}
                 </div>
               </div>
@@ -24,8 +33,8 @@ const ProfileSection = ({props}) => {
             <div className="rounded-md shadow-2xl mt-2">
               <div className="px-4 py-2">
                 <div>
-                  <p className="text-gray-200">ER 14 D 9549</p>
-                  <p className="text-xs text-gray-400">Gurz Old Center</p>
+                  <p className="text-gray-200">{vehicleNumber}</p>
+                  <p className="text-xs text-gray-400">{vehicleLocation}</p>
                 </div>
                 <div className="w-56 h-36 rounded-md mx-auto my-2 flex items-center">
                   <img className="rounded-md" src="https://images.freeimages.com/images/previews/7ed/truck-1560934.jpg" alt="" />
@@ -33,19 +42,19 @@ const ProfileSection = ({props}) => {
                 <div className="my-2 flex justify-evenly">
                   <div>
                     <p className="text-xs text-gray-400">Speed</p>
-                    <p className="text-sm text-gray-200">140 km/h</p>
+                    <p className="text-sm text-gray-200">{speed} km/h</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Altitude</p>
-                    <p className="text-sm text-gray-200">154 m</p>
+                    <p className="text-sm text-gray-200">{altitude} m</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Direction</p>
-                    <p className="text-sm text-gray-200">NE</p>
+                    <p className="text-sm text-gray-200">{direction}</p>
                   </div>
                 </div>
                 <div className="bg-gray-800 shadow-xl w-56 lg:h-24 rounded-md mx-auto mt-6 p-2">
-                  <div className="w-6 h-6 rounded-full bg-blue-500 -mt-5 ml-2 p-1">
+                  <div className={`w-6 h-6 rounded-full bg-${vehicleOn?'blue':'red'}-500 -mt-5 ml-2 p-1`}>
                     <GiAerialSignal className="font-semibold text-gray-200 -mt-1 -ml-1 lg:mt-0 lg:ml-0" />
                   </div>
                   <div className="flex justify-between text-gray-200 font-semibold">
@@ -66,8 +75,8 @@ const ProfileSection = ({props}) => {
                     <img className="rounded-md h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBL-8_Qb0fNJjUsAGBhvi8VTGx_daWwBDGQg&usqp=CAU" alt="" />
                   </div>
                   <div>
-                    <p className="text-gray-200 text-sm">Kevin Pitersian</p>
-                    <p className="text-gray-400 text-xs">USA</p>
+                    <p className="text-gray-200 text-sm">{driverName}</p>
+                    <p className="text-gray-400 text-xs">{driverLocation}</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-200 p-2">42 Trips</p>

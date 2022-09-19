@@ -5,7 +5,7 @@ import TripDuration from "./TopCards/TripDuration"
 import Battery from "./MissionCenter/Battery";
 import CarTemperature from "./MissionCenter/CarTemperature";
 import Diagonastic from "./MissionCenter/Diagonastic";
-import Fuel from "./MissionCenter/Fuel";
+import CarHealth from "./MissionCenter/CarHealth";
 import Immobilization from "./MissionCenter/Immobilization";
 import Sos from "./MissionCenter/Sos";
 import Box from "@mui/material/Box";
@@ -78,7 +78,7 @@ const DashBoard = () => {
       </Box>
     </Modal>
       <div className="flex flex-wrap justify-evenly items-center w-full my-4 px-4 md:px-0 xl:px-6">
-        <EngineLoad props={{load:70}}/>
+        <EngineLoad props={{load:22}}/>
         <EngineOnOff props={{state:'on'}}/>
         <TripDuration props={{duration: 354}}/>
       </div>
@@ -90,12 +90,12 @@ const DashBoard = () => {
           <Sos/>
           </div>
           <div className="flex justify-evenly mb-2">
-            <Fuel props={{fuelAmount:35}}/>
             <Battery props={{voltage: 11.5}}/>
+            <CarHealth props={{carHealthAmount:'NA', dtc:false}}/>
           </div>
           <div className="flex justify-evenly mb-2">
-            <CarTemperature props={{temperature:102}}/>
-            <Diagonastic props={{dgc:true}}/>
+            <CarTemperature props={{temperature:78}}/>
+            <Diagonastic props={{dtc:false}}/>
           </div>
         </div>
         {/* map section */}

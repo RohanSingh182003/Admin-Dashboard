@@ -2,7 +2,7 @@ import React from 'react'
 import TaxiAlertIcon from '@mui/icons-material/TaxiAlert';
 
 const Diagonastic = ({props}) => {
-  let diagonastic = props.dgc;
+  let diagonastic = props.dtc;
   let color = '#36bd39';
   if(diagonastic){
     color = 'red';
