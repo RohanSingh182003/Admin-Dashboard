@@ -78,8 +78,8 @@ const DashBoard = () => {
       </Box>
     </Modal>
       <div className="flex flex-wrap justify-evenly items-center w-full my-4 px-4 md:px-0 xl:px-6">
-        <EngineLoad props={{load:62}}/>
-        <EngineOnOff props={{state:'off'}}/>
+        <EngineLoad props={{load:22}}/>
+        <EngineOnOff props={{state:'on'}}/>
         <TripDuration props={{duration: 354}}/>
       </div>
       <div className="w-full flex-col md:flex-row md:w-10/12 md:h-[75%] bg-gray-900 rounded-md flex md:pr-2">

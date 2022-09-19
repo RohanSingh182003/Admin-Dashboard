@@ -5,7 +5,7 @@ const EngineLoad = ({ props }) => {
   const percentage = props.load;
   let color;
   if (percentage <= 30) {
-    color = '#2CE549 ';
+    color = '#2CE565 ';
   } else if (percentage > 30 && percentage <= 60) {
     color = 'yellow';
   } else {
